@@ -21,8 +21,9 @@ Create a word document from scraped data from the website.
 # Python libs installed 
 
 * BeautifulSoup
-* Pypandoc
+* Pypandoc (plus pandoc-docx-pagebreakpy)
 * Progressbar2
+* Markdown
 
 
 # Steps
@@ -40,3 +41,8 @@ Create a word document from scraped data from the website.
 1. Go to https://pandoc.org/installing.html
 2. Download Pandoc deb package https://github.com/jgm/pandoc/releases/tag/2.11.2
 3. Right-click and install package
+
+
+# Credits
+
+Photo by <a href="https://unsplash.com/@mvdheuvel?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Maarten van den Heuvel</a> on <a href="https://unsplash.com/s/photos/documents?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>
