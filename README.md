@@ -1,6 +1,6 @@
 # Web to Doc
 
-A python script that scrapes content from a web page converts it to a Markdown string and outputs a Word document.
+A python script that scrapes content from a web page, converts it to a Markdown string and outputs a Word document.
 
 Using Python 3.6.12.
 
