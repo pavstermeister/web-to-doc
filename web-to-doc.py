@@ -53,7 +53,7 @@ def apply_markdown_formatting(list_of_records):
     markdown_string = ""
 
     for item in list_of_records:
-        line = "#" + " " + item + "\n"
+        line = "#" + " " + item + "\n\n"
         markdown_string += line
 
     print(markdown_string)
@@ -73,7 +73,7 @@ def get_info_for_each_film(list_of_urls, base_url):
             scrape_data = BeautifulSoup(
                 category_page, "html.parser")
             category = scrape_data.h1.text
-            category_md = "#" + " " + category + "\n"
+            category_md = "#" + " " + category + "\n\n"
             markdown_string += category_md
             links_to_films = scrape_data.find_all("h3")
             links_to_films = [base_url + "catalogue/" +
@@ -83,7 +83,7 @@ def get_info_for_each_film(list_of_urls, base_url):
                 scrape_data = BeautifulSoup(
                     film_page, "html.parser")
                 film_title = scrape_data.h1.text
-                film_title_md = "##" + " " + film_title + "\n"
+                film_title_md = "##" + " " + film_title + "\n\n"
                 markdown_string += film_title_md
                 try:
                     description = scrape_data.find(
@@ -91,7 +91,7 @@ def get_info_for_each_film(list_of_urls, base_url):
                     description_md = description + "\n\n"
                     markdown_string += description_md
                 except AttributeError as e:
-                    markdown_string += '\n'
+                    markdown_string += '\n\n'
             markdown_string += '\\newpage'
             bar.update(counter)
     return markdown_string
@@ -111,5 +111,7 @@ if __name__ == "__main__":
     BASE_URL = "http://books.toscrape.com/"
     page_data = collect_website_data(BASE_URL)
     links_to_categories = get_list_of_category_urls(page_data, BASE_URL)
+    # titles = get_category_titles_from_each_page(links_to_categories)
+    # apply_markdown_formatting(titles)
     film_data = get_info_for_each_film(links_to_categories, BASE_URL)
     convert_markdown_to_docx(film_data)
