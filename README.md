@@ -4,7 +4,6 @@ A python script that scrapes content from a web page, converts it to a Markdown 
 
 Using Python 3.6.12.
 
-
 **Steps**
 
 1. Collect data from index page
@@ -13,6 +12,8 @@ Using Python 3.6.12.
 4. Visit each film in each category and scrape relevant data for that film
 5. Format collected data into a markdown string
 6. Store collected data as a Word document
+
+Check out the associated article on Dev.to -- https://dev.to/pavstermeister/from-web-to-word-using-python-4gd9
 
 
 # Dependencies
